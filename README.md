@@ -1,6 +1,6 @@
 # AmiGO Dataset
 
-AmiGO is a friendly dataset of high-quality human-curated samples for protein function prediction. It is derived from the UniProt database and contains amino acid sequences annotated with their corresponding gene ontology (GO) terms. The samples are divided into three subsets each containing a set of GO terms that are associated with one of the three subgraphs of the gene ontology - `Molecular Function`, `Biological Process`, and `Cellular Component`. In addition, we provide a stratified `train`/`test` split that utilizes latent subgraph embeddings to distribute GO term annotations equally.
+AmiGO is a friendly dataset of high-quality samples for protein function prediction. It is derived from the UniProt database and contains human-reviewed amino acid sequences annotated with their corresponding gene ontology (GO) terms. The samples are divided into three subsets each containing a set of GO terms that are associated with one of the three subgraphs of the gene ontology - `Molecular Function`, `Biological Process`, and `Cellular Component`. In addition, we provide a stratified `train`/`test` split that utilizes latent subgraph embeddings to distribute GO term annotations equally.
 
 ## Processing Steps
 

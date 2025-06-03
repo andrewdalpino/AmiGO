@@ -1,14 +1,14 @@
 # AmiGO Dataset
 
-AmiGO is a dataset of high-quality samples for protein function prediction. It is derived from the SwissProt subsection of the UniProt database and contains amino acid sequences annotated with their corresponding gene ontology (GO) terms. The samples are divided into three subsets each containing a set of GO terms that are associated with one of the three subgraphs of the gene ontology - `Molecular Function`, `Biological Process`, and `Cellular Component`. In addition, we provide a stratified `train`/`test` split that utilizes latent subgraph embeddings to distribute GO term annotations equally.
+AmiGO is a friendly dataset of high-quality human-curated samples for protein function prediction. It is derived from the UniProt database and contains amino acid sequences annotated with their corresponding gene ontology (GO) terms. The samples are divided into three subsets each containing a set of GO terms that are associated with one of the three subgraphs of the gene ontology - `Molecular Function`, `Biological Process`, and `Cellular Component`. In addition, we provide a stratified `train`/`test` split that utilizes latent subgraph embeddings to distribute GO term annotations equally.
 
 ## Processing Steps
 
-- Filter samples for high-quality empirical evidence codes.
+- Filter high-quality empirical evidence codes.
 - Remove duplicate GO term annotations.
-- Expand GO term annotations to include the entire GO subgraph.
-- Filter samples annotated with only root terms (i.e "biological process").
-- Assign stratum IDs to the samples in the dataset.
+- Expand annotations to include the entire GO subgraph.
+- Embed subgraphs and assign stratum IDs to the samples.
+- Generate stratified train/test split.
 
 ## Subsets
 
@@ -54,7 +54,7 @@ dataset = dataset.train_test_split(test_size=0.2, stratify_by_column="stratum_id
 You can also filter the samples of the dataset like in the example below.
 
 ```python
-dataset = dataset.filter(lambda sample: sample["length"] <= 2048)
+dataset = dataset.filter(lambda sample: len(sample["sequence"]) <= 2048)
 ```
 
 ## Tokenizing

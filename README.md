@@ -12,7 +12,7 @@ AmiGO is a friendly dataset of high-quality samples for protein function predict
 
 ## Subsets
 
-The [AmiGO](https://huggingface.co/datasets/andrewdalpino/AmiGO) dataset is available on HuggingFace Hub and can be loaded using the HuggingFace [Datasets](https://huggingface.co/docs/datasets) library. 
+The [AmiGO](https://huggingface.co/datasets/andrewdalpino/AmiGO) dataset is available on HuggingFace Hub and can be loaded using the HuggingFace [Datasets](https://huggingface.co/docs/datasets) library.
 
 The dataset is divided into three subsets according to the GO terms that the sequences are annotated with.
 
@@ -71,6 +71,18 @@ def tokenize(sample: dict): list[int]:
 
 dataset = dataset.map(tokenize, remove_columns="sequence")
 ```
+
+## Evidence Codes
+
+These charts show the distribution of evidence codes among the samples. For a full explanation of the meaning of each evidence code visit [https://geneontology.org/docs/guide-go-evidence-codes/](https://geneontology.org/docs/guide-go-evidence-codes/).
+
+![All Evidence Codes](https://raw.githubusercontent.com/andrewdalpino/AmiGO/master/docs/images/evidence_codes_all.png)
+
+![Molecular Function Evidence Codes](https://raw.githubusercontent.com/andrewdalpino/AmiGO/master/docs/images/evidence_codes_mf.png)
+
+![Biological Process Evidence Codes](https://raw.githubusercontent.com/andrewdalpino/AmiGO/master/docs/images/evidence_codes_bp.png)
+
+![Cellular Component Evidence Codes](https://raw.githubusercontent.com/andrewdalpino/AmiGO/master/docs/images/evidence_codes_cc.png)
 
 ## References
 
